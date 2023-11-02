@@ -1,0 +1,31 @@
+import { test, expect } from '@playwright/test';
+import { time } from 'console';
+
+test('test', async ({ page }) => {
+  await page.goto('http://dhakathai.publicdemo.xyz/login');
+  await page.getByLabel('Enter Mobile No').click();
+  await page.getByLabel('Enter Mobile No').fill('8801711000001');
+  await page.getByLabel('Password').click();
+  await page.getByLabel('Password').fill('12345678');
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.locator('.ps__thumb-y').first().click();
+  await page.getByRole('link', { name: ' Gift Management' }).click();
+  await page.getByRole('link', { name: '󰉹 Gift Slab List' }).click();
+  await page.getByRole('button', { name: 'Create' }).click();
+  await page.getByPlaceholder('Title *').click();
+  await page.getByPlaceholder('Title *').fill('rifat1');
+  await page.getByPlaceholder('Title *').press('Tab');
+  await page.getByPlaceholder('Minimum Point *').click();
+  await page.getByPlaceholder('Minimum Point *').fill('25500');
+  await page.getByPlaceholder('Minimum Point *').press('Tab');
+  await page.getByPlaceholder('Maximum Point *').fill('26000');
+  await page.getByPlaceholder('Name *').click();
+  await page.getByPlaceholder('Name *').click();
+  await page.getByPlaceholder('Name *').fill('asd');
+  await page.getByRole('combobox').selectOption('1');
+  await page.locator('input[name="image"]').setInputFiles('iss2.png');
+  //await page.locator('input[name="image"]').click();
+  await page.getByRole('button', { name: 'Submit', exact: true }).click();
+  await page.locator('#userDropdown').click();
+  await page.getByRole('link', { name: 'Sign out' }).click();
+});
