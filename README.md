@@ -29,3 +29,7 @@ npm init playwright@latest
     * debug tests
 * npx playwright test HomePage.spec.js --debug     
     *  debug specific test file
+
+/***Playwright Recording***/
+* npx playwright codegen -o tests/newfilename.spec.js
+
