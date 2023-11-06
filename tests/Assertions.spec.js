@@ -41,9 +41,14 @@ test('AssertionTest', async ({page}) => {
     await expect(await page.locator('.page-title h1')).toHaveText('Register')
 
     // 8) expect(locator).toContainText() Element contains text
+    await expect(await page.locator('.page-title h1')).toContainText('Reg') // Partial text contains
 
-
-
+    // 9) expect(locator).toHaveValue(value) // Input text have some value
+    const emailInput = page.locator('#Email')
+    await emailInput.fill('test@demo.com')
+    await expect(emailInput).toHaveValue('test@demo.com')
+    const dateField = page.locator("select[name='DateOfBirthDay'] option")
+    await expect(dateField).toHaveCount(32)
 
 
 
