@@ -30,6 +30,6 @@ npm init playwright@latest
 * npx playwright test HomePage.spec.js --debug     
     *  debug specific test file
 
-/***Playwright Recording***/
+***Playwright Recording***
 * npx playwright codegen -o tests/newfilename.spec.js
 
