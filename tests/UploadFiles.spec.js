@@ -13,7 +13,7 @@ test('Single file', async({page})=>{
 // test.only('Multiple files', async({page})=>{
 
 // });
-test('Multiple Files',async ({page})=>{
+test.only('Multiple Files',async ({page})=>{
 
     await page.goto('https://davidwalsh.name/demo/multiple-file-upload.php')
 
